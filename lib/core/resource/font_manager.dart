@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FontType {
-  static const String fontStyle = "Teko";
+  static const String kTeko = "Teko";
+  static const String kInter = "Inter";
+  static const String kRoboto = "Roboto";
 }
 
 class FontWeightManager {

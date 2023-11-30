@@ -6,7 +6,7 @@ TextStyle _textStyleManager(
     required double textSize,
     required FontWeight textWeight}) {
   return TextStyle(
-    fontFamily: FontType.fontStyle,
+    fontFamily: FontType.kTeko,
     color: fontColor,
     fontSize: textSize,
     fontWeight: textWeight,
