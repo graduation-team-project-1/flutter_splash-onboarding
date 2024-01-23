@@ -1,10 +1,10 @@
 import 'package:app/core/resource/color_manager.dart';
 import 'package:app/core/resource/size_config.dart';
+import 'package:app/core/resource/string_manage.dart';
 import 'package:app/core/widgets/custom_button.dart';
-import 'package:app/features/auth/view/register_view.dart';
+import 'package:app/features/auth/register/view/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import 'custom_indicator.dart';
 import 'custom_page_view.dart';
@@ -20,7 +20,6 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   PageController? pageController;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     pageController = PageController(initialPage: 0)
       ..addListener(
@@ -52,11 +51,13 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             children: [
               Expanded(
                 child: CustomButton(
-                  buttonTitle: "Skip",
+                  buttonTitle: StringManager.skip,
                   onPressed: () {
-                    Get.to(() => const RegisterView(),
-                        transition: Transition.zoom,
-                        duration: const Duration(milliseconds: 600));
+                    Get.to(
+                      () => const RegisterView(),
+                      transition: Transition.zoom,
+                      duration: const Duration(milliseconds: 600),
+                    );
                   },
                   backgroundColor: ColorManager.whiteColor,
                   textColor: ColorManager.mainColor,
@@ -71,9 +72,13 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                           duration: const Duration(milliseconds: 600),
                           curve: Curves.easeIn);
                     } else {
-                      Get.to(() => const RegisterView(),
-                          transition: Transition.rightToLeft,
-                          duration: const Duration(milliseconds: 600));
+                      Get.to(
+                        () => const RegisterView(),
+                        transition: Transition.rightToLeft,
+                        duration: const Duration(
+                          milliseconds: 600,
+                        ),
+                      );
                     }
                   },
                   buttonTitle: pageController!.hasClients
@@ -89,5 +94,11 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         )
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    pageController?.dispose();
+    super.dispose();
   }
 }

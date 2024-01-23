@@ -14,6 +14,12 @@ class ImagesPath {
       "${AssetsPath.imagePathAssets}Pregnancy tracking.svg";
   static const String analysisOfBabyCrying =
       "${AssetsPath.imagePathAssets}Analysis of baby crying.svg";
+  static const String login =
+      "${AssetsPath.imagePathAssets}login.svg";
+  static const String google =
+      "${AssetsPath.imagePathAssets}google.svg";
+  static const String register =
+      "${AssetsPath.imagePathAssets}register.svg";
 }
 
 // class ImagesPath {

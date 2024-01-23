@@ -15,6 +15,8 @@ class AppPaddingManager {
   static const double p18 = 18;
   static const double p20 = 20;
   static const double p28 = 28;
+  static const double p35 = 35;
+  static const double p87 = 87;
   static const double p100 = 100;
 }
 

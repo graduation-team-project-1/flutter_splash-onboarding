@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
-
   @override
   State<SplashView> createState() => _SplashViewState();
 }

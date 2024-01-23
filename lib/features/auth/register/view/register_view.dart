@@ -1,4 +1,4 @@
-import 'package:app/features/auth/view/widgets/register_view_body.dart';
+import 'package:app/features/auth/register/view/register_view_body.dart';
 import 'package:flutter/material.dart';
 
 class RegisterView extends StatelessWidget {
