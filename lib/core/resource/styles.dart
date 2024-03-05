@@ -3,6 +3,8 @@ import 'package:app/core/resource/font_manager.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
+  static const textStyle10 = TextStyle(
+      fontSize: 10, fontWeight: FontWeight.w600, fontFamily: FontType.kRoboto);
   static const textStyle12 = TextStyle(
       fontSize: 12, fontWeight: FontWeight.w600, fontFamily: FontType.kInter);
 

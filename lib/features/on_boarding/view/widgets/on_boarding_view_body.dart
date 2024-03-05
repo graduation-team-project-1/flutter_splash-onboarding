@@ -1,11 +1,9 @@
 import 'package:app/core/resource/color_manager.dart';
 import 'package:app/core/resource/size_config.dart';
 import 'package:app/core/widgets/custom_button.dart';
-import 'package:app/features/auth/view/register_view.dart';
+import 'package:app/features/pregnant_home/view/pregnant_home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import 'custom_indicator.dart';
 import 'custom_page_view.dart';
 
@@ -54,7 +52,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                 child: CustomButton(
                   buttonTitle: "Skip",
                   onPressed: () {
-                    Get.to(() => const RegisterView(),
+                    Get.to(() => const PregnantHomeView(),
                         transition: Transition.zoom,
                         duration: const Duration(milliseconds: 600));
                   },
@@ -71,7 +69,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                           duration: const Duration(milliseconds: 600),
                           curve: Curves.easeIn);
                     } else {
-                      Get.to(() => const RegisterView(),
+                      Get.to(() => const PregnantHomeView(),
                           transition: Transition.rightToLeft,
                           duration: const Duration(milliseconds: 600));
                     }
