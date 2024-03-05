@@ -13,7 +13,7 @@ class StringManager {
   static const String or = "OR";
   static const String continueWithGoogle = "Continue with Google";
   static const String createAccount = "If you don’t have any account! ";
-  static const String joinUs = "Join us";
+  static const String joinUs = "Join us!";
   static const String registerName = "Name";
   static const String registerNameError = "Name not Valid";
   static const String registerEmail = "Email";
@@ -21,4 +21,6 @@ class StringManager {
   static const String signUp = "Sign up";
   static const String policy =
       "I’m agree to The Terms of Service and Privacy\nPolicy";
+
+  static String sendCode = "Send Code";
 }

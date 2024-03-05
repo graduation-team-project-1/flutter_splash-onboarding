@@ -4,8 +4,10 @@ import 'package:app/core/resource/font_manager.dart';
 import 'package:app/core/resource/size_config.dart';
 import 'package:app/core/resource/string_manage.dart';
 import 'package:app/core/resource/values_manage.dart';
+import 'package:app/core/widgets/custom_button.dart';
 import 'package:app/core/widgets/gradient_text.dart';
 import 'package:app/features/auth/login/view/login_view.dart';
+import 'package:app/features/auth/user%20data/view/user_role.dart';
 import 'package:app/features/auth/widgets/custome_input_filed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -28,20 +30,24 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
 
   bool checkListValue = false;
 
+  final _focusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        padding: const EdgeInsets.only(
-            top: AppPaddingManager.p35,
-            left: AppPaddingManager.p8,
-            right: AppPaddingManager.p8,
-            bottom: AppPaddingManager.p20),
+    return Container(
+      padding: const EdgeInsets.only(
+        top: AppPaddingManager.p35,
+        left: AppPaddingManager.p8,
+        right: AppPaddingManager.p8,
+        bottom: AppPaddingManager.p20,
+      ),
+      alignment: Alignment.topCenter,
+      child: SingleChildScrollView(
         child: Column(
           children: [
             SvgPicture.asset(ImagesPath.register),
             GradientText(
-              text: StringManager.welcomeBack,
+              text: StringManager.joinUs,
               gradient: ColorManager.primaryColorGradient,
               style: TextStyle(
                 fontSize: FontSizeManager.s32,
@@ -103,26 +109,18 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               height: SizeConfig.defultSize! * 0.9,
             ),
             SizedBox(
+              height: AppSizeManager.s60,
               width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.07,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: ColorManager.mainColor,
-                  elevation: AppSizeManager.s0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(AppSizeManager.s8),
-                  ),
-                ),
-                onPressed: checkValidation() ? () {} : null,
-                child: Text(
-                  StringManager.login,
-                  style: TextStyle(
-                    color: ColorManager.whiteColor,
-                    fontFamily: GoogleFonts.roboto().fontFamily,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
+              child: CustomButton(
+                buttonTitle: "Sign up",
+                onPressed: checkValidation()
+                    ? () {
+                        _focusNode.unfocus();
+                        Get.to(
+                          const UserRole(),
+                        );
+                      }
+                    : null,
               ),
             ),
             const SizedBox(
@@ -179,8 +177,6 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   onTap: () {
                     Get.to(
                       const LoginView(),
-                      transition: Transition.zoom,
-                      duration: const Duration(milliseconds: 600),
                     );
                   },
                   child: GradientText(
@@ -199,19 +195,19 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
     );
   }
 
+  bool checkValidation() {
+    return emailController.text.isEmpty &&
+            passwordController.text.isEmpty &&
+            nameController.text.isEmpty
+        ? false
+        : true;
+  }
+
   @override
   void dispose() {
     emailController.dispose();
     nameController.dispose();
     passwordController.dispose();
     super.dispose();
-  }
-
-  bool checkValidation() {
-    return emailController.text.isEmpty ||
-            passwordController.text.isEmpty ||
-            nameController.text.isEmpty
-        ? false
-        : true;
   }
 }

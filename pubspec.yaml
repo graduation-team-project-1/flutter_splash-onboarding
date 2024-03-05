@@ -28,16 +28,25 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^8.1.3
+  calendar_date_picker2: ^0.5.3
+  calender_picker: ^2.0.2
   cupertino_icons: ^1.0.2
   dots_indicator: ^3.0.0
   flutter:
     sdk: flutter
+  flutter_animate: ^4.5.0
+  flutter_bloc: ^8.1.4
+  flutter_date_range_picker: ^0.0.14
   flutter_svg: ^2.0.9
   get: ^4.6.6
+  get_it: ^7.6.7
   google_fonts: ^6.1.0
+  pin_code_fields: ^8.0.1
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
 

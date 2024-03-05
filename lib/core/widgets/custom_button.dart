@@ -16,7 +16,7 @@ class CustomButton extends StatelessWidget {
   final Color? backgroundColor;
   final BorderRadius? borderRadius;
   final String buttonTitle;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final double? fontSize;
 
   @override

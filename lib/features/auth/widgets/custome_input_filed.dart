@@ -78,8 +78,8 @@ class _CustomeInputFiledState extends State<CustomeInputFiled> {
                   );
                 },
                 icon: notVisible
-                    ? const Icon(Icons.visibility_off)
-                    : const Icon(Icons.visibility),
+                    ? const Icon(Icons.visibility_off_outlined)
+                    : const Icon(Icons.visibility_outlined),
               )
             : null,
         suffixIconColor: ColorManager.mainColor,

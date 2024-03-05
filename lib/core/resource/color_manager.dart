@@ -19,6 +19,10 @@ class ColorManager {
   static const Color blackColor = Color(0xff1E1E1E);
   static const Color barColor = Color(0xff979797);
   static const Color grayColor = Color(0xffBDBDBD);
+  static const Color pinkColor = Color(0xff977AA5);
+  static const Color seconderPinkColor = Color.fromARGB(30, 185, 154, 200);
+  static const Color calenderColor = Color.fromRGBO(214, 199, 221, 1);
   static const Color whiteColor = Colors.white;
   static const Color redColor = Colors.red;
+
 }
