@@ -14,6 +14,7 @@ class SizeConfig {
     defultSize = orientation == Orientation.landscape
         ? screenHeight! * .024
         : screenWidth! * .024;
-    print('this is the default size $defultSize');
+    // print('this is the default size $defultSize');
+    // print(SizeConfig.defultSize! * 4);
   }
 }
