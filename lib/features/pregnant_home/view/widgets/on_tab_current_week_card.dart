@@ -112,7 +112,6 @@
 //     );
 //   }
 // }
-////////////////////////////////////////////
 // ///
 // import 'package:app/core/resource/color_manager.dart';
 // import 'package:flutter/material.dart';
@@ -191,16 +190,26 @@
 //     );
 //   }
 // }
-/////////////////////
+import 'package:app/core/resource/assets.dart';
 import 'package:app/core/resource/color_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class OnTabCurrentWeekCard extends StatelessWidget {
-  const OnTabCurrentWeekCard({Key? key}) : super(key: key);
+  const OnTabCurrentWeekCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon:SvgPicture.asset(ImagesPath.arrowBack),
+          onPressed: () {
+            Get.back();
+          },
+        ),
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(25),
@@ -266,7 +275,7 @@ class OnTabCurrentWeekCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: bgColor,
         border: border
-            ? Border(
+            ? const Border(
                 top: BorderSide(
                   color: ColorManager.whiteColor,
                   width: 2,

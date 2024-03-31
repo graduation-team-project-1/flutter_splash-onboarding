@@ -1,6 +1,5 @@
 import 'package:app/core/resource/color_manager.dart';
-import 'package:app/core/resource/font_manager.dart';
-import 'package:app/core/resource/font_style_manager.dart';
+import 'package:app/core/resource/values_manage.dart';
 import 'package:flutter/material.dart';
 
 class ThemeManager {
@@ -10,11 +9,17 @@ class ThemeManager {
         backgroundColor: ColorManager.whiteColor,
         iconTheme: IconThemeData(color: ColorManager.blackColor),
       ),
-      textTheme: TextTheme(
-        bodyLarge: tekoBoldTextManger(
-          fontColor: ColorManager.whiteColor,
-          textSize: FontSizeManager.s52,
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(
+            width: AppSizeManager.s18,
+            color: Colors.black,
+          ),
+          borderRadius: BorderRadius.circular(
+            AppSizeManager.s8,
+          ),
         ),
+        suffixIconColor: ColorManager.mainColor,
       ),
     );
   }

@@ -4,6 +4,7 @@ class FontType {
   static const String kTeko = "Teko";
   static const String kInter = "Inter";
   static const String kRoboto = "Roboto";
+  static const String kPoppins = "Poppins";
 }
 
 class FontWeightManager {
@@ -22,5 +23,6 @@ class FontSizeManager {
   static const double s18 = 18;
   static const double s20 = 20;
   static const double s22 = 22;
+  static const double s32 = 32;
   static const double s52 = 52;
 }

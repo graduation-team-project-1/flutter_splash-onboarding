@@ -9,8 +9,7 @@ import 'package:app/core/resource/string_manage.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class CurrentWeekCard extends StatefulWidget {
-  const CurrentWeekCard({Key? key, required this.currentWeek})
-      : super(key: key);
+  const CurrentWeekCard({super.key, required this.currentWeek});
 
   final int currentWeek;
 
@@ -48,9 +47,11 @@ class _CurrentWeekCardState extends State<CurrentWeekCard> {
             CurrentWeekListView(
               currentWeek: widget.currentWeek,
               currentWeekChanged: (value) {
-                setState(() {
-                  weekChanged = value;
-                });
+                setState(
+                  () {
+                    weekChanged = value;
+                  },
+                );
               },
               selectedWeekColor: ColorManager.secondaryCalenderColor,
               arrowColor: ColorManager.secondaryCalenderColor,

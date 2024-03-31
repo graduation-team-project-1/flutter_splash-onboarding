@@ -98,32 +98,33 @@ class CustomHomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-        contentPadding: EdgeInsets.zero,
-        leading: GestureDetector(
-          onTap: onImageTap,
-          child: CircleAvatar(
-              radius: 35,
-              backgroundImage: CachedNetworkImageProvider(
-                imagePath,
-              )),
+      contentPadding: EdgeInsets.zero,
+      leading: GestureDetector(
+        onTap: onImageTap,
+        child: CircleAvatar(
+            radius: 35,
+            backgroundImage: CachedNetworkImageProvider(
+              imagePath,
+            )),
+      ),
+      title: Text(
+        title,
+        style: Styles.textStyle18.copyWith(color: ColorManager.mainColor),
+      ),
+      subtitle: Text(subTitle,
+          style: Styles.textStyle16.copyWith(
+              fontFamily: FontType.kRoboto,
+              letterSpacing: 0.96,
+              color: ColorManager.blackColor)),
+      trailing: GestureDetector(
+        onTap: onTap,
+        child: Image.asset(
+          hasNotifcation
+              ? ImagesPath.hasNotificationIcon
+              : ImagesPath.hasNotNotificationIcon,
+          scale: 3.5,
         ),
-        title: Text(
-          title,
-          style: Styles.textStyle18.copyWith(color: ColorManager.mainColor),
-        ),
-        subtitle: Text(subTitle,
-            style: Styles.textStyle16.copyWith(
-                fontFamily: FontType.kRoboto,
-                letterSpacing: 0.96,
-                color: ColorManager.blackColor)),
-        trailing: GestureDetector(
-          onTap: onTap,
-          child: Image.asset(
-            hasNotifcation
-                ? ImagesPath.hasNotificationIcon
-                : ImagesPath.hasNotNotificationIcon,
-            scale: 3.5,
-          ),
-        ));
+      ),
+    );
   }
 }
