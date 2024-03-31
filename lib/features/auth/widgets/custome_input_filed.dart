@@ -10,12 +10,12 @@ class CustomeInputFiled extends StatefulWidget {
   final bool? isPassword;
 
   const CustomeInputFiled({
-    Key? key,
+    super.key,
     required this.hintText,
     required this.controller,
     required this.errorText,
     required this.isPassword,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomeInputFiled> createState() => _CustomeInputFiledState();

@@ -103,4 +103,48 @@ class ImagesPath {
   static const String phoneIcon = "${AssetsPath.iconImagePathAssets}phone.svg";
   static const String cameraIcon =
       "${AssetsPath.iconImagePathAssets}camera.svg";
+
+  static const String nutriationMore =
+      "${AssetsPath.imagePathAssets}nutration_more.svg";
+
+  static const String exrciesesMore =
+      "${AssetsPath.imagePathAssets}exercises_more.svg";
+
+  static const String babyNameMore =
+      "${AssetsPath.imagePathAssets}baby_names.svg";
+  
+  static const String apple =
+      "${AssetsPath.imagePathAssets}apple.png";
+
+  static const String chicken =
+      "${AssetsPath.imagePathAssets}chicken.png";
+  
+  static const String fruitVegtiables =
+      "${AssetsPath.imagePathAssets}fruit_vegtiables.png";
+  
+  static const String fuitsaladHoney =
+      "${AssetsPath.imagePathAssets}fruitsalad_honey.png";
+  
+  static const String kiwi =
+      "${AssetsPath.imagePathAssets}kiwi.png";
+  
+  static const String lemon =
+      "${AssetsPath.imagePathAssets}lemon.png";
+ 
+  static const String mango =
+      "${AssetsPath.imagePathAssets}mango.png";
+  
+  static const String nuts =
+      "${AssetsPath.imagePathAssets}nuts.png";
+  
+  static const String oatsMilk =
+      "${AssetsPath.imagePathAssets}oats_milk.png";
+  
+  static const String pasta =
+      "${AssetsPath.imagePathAssets}pasta.png";
+ 
+  static const String toastAvocado =
+      "${AssetsPath.imagePathAssets}toast_avocado.png";
+  static const String toastEggs =
+      "${AssetsPath.imagePathAssets}toast_eggs.png";
 }

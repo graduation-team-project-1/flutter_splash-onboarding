@@ -16,6 +16,12 @@ abstract class Styles {
     fontFamily: FontType.kRoboto,
   );
 
+  static const robotoTextStyle20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
+    fontFamily: FontType.kRoboto,
+  );
+
   static const textStyle14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
@@ -46,7 +52,7 @@ abstract class Styles {
   static const textStyle20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w600,
-    fontFamily:FontType.kRoboto,
+    fontFamily: FontType.kRoboto,
   );
 
   static const textStyle24 = TextStyle(

@@ -65,7 +65,6 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
                 buttonTitle: "Send code",
                 onPressed: isbuttonActive
                     ? () {
-                        print(emailController.text);
                         Get.to(
                           const OtpPage(),
                         );

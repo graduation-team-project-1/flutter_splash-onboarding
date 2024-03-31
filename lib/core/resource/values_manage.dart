@@ -55,7 +55,31 @@ class KeyValues {
   static const String savedItemKey = "SavedValueKey";
 }
 
-final testStringDescription =
+class ConstantApp {
+  static late DateTime weekValue;
+
+  DateTime changeDateTime() {
+    // we need the pregenant enter the start preg date and the expected date for born 
+
+    // mon 3 , will preg in mon 9 => 
+   /**
+    * هيا مسجله في شهر 3 و هتولد في شهر 9 كدا 
+    هيا لسلها = 9 - 3 = 6 شهور في الحمل 
+    3 = 6 - هتطرح المده دي من فتره الحمل الاساسيه اللي هيا 9 شهور= 9 
+    كدا عندنا 
+    حامل بقلها => 3 شهور
+    
+
+    */
+
+    // her we  add a new day 
+    DateTime.now().add(
+      const Duration(days: 1),
+    );
+  }
+}
+
+const testStringDescription =
     r'''If you have diabetes, your healthy eating plan should not be that different from a healthy eating plan for someone without diabetes. In fact, the American Diabetes Association (ADA) echoes the dietary guidelines recommended for the general public: A diet centered on fruits, vegetables, whole grains, legumes (peas and beans), and low-fat dairy products.
 How carbs fit in
 However, you'll want to pay special attention to your carbohydrate intake. For most people with diabetes, carbohydrates should account for about 45% to 55% of the total calories you eat each day.

@@ -78,6 +78,8 @@ class ColorManager {
   static const Color secondaryBarColor = Color(0xFFEDEDED);
   static const Color ratedStarColor = Color(0xFFFFC978);
   static const Color unratedStarColor = Color(0xFFD9D9D9);
+
+  static const Color moreBackgroundColor = Color.fromRGBO(185, 154, 200, 0.15);
 }
 
 Color determineMainColor(String type) {

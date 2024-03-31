@@ -8,16 +8,18 @@ import 'package:app/features/profile/models/is_notification_model.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
+
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await appDI();
   await Hive.initFlutter();
-  WidgetsFlutterBinding.ensureInitialized();
+
   await IsNotificationModel.loadIsNotification();
+
   Bloc.observer = SimpleBlocObserver();
+  
   Hive.registerAdapter(EventModelAdapter());
   await Hive.openBox<EventModel>(StringManager.kEventsBox); // var eventsBox =
   // await eventsBox.clear();

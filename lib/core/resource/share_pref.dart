@@ -20,13 +20,13 @@ class AppSharedPref {
 
   Future<void> removeSaveData({required ItemModel item}) async {
     final data = _sharedPreferences.getStringList(KeyValues.savedItemKey) ?? [];
-    print("this is data before remove item $data");
-    print("*" * 20);
+    // print("this is data before remove item $data");
+    // print("*" * 20);
     data.remove(item.toString());
-    print("this is data after remove item $data");
-    for (var element in data) {
-      print(element);
-    }
+    // print("this is data after remove item $data");
+    // for (var element in data) {
+    //   // print(element);
+    // }
   }
 
   Future<List<ItemModel>> getSaveData() async {

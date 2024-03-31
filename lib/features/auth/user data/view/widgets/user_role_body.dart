@@ -30,7 +30,9 @@ class UserRoleBody extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                Get.to(const Pregnant());
+                Get.to(
+                  const Pregnant(),
+                );
               },
               child: const CustomUserRole(
                 title: "Pregnant",
@@ -41,9 +43,12 @@ class UserRoleBody extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
+            //mom
             InkWell(
               onTap: () {
-                Get.to(const MomRole());
+                Get.to(
+                  const MomRole(),
+                );
               },
               child: const CustomUserRole(
                 title: "Mom",
@@ -54,6 +59,7 @@ class UserRoleBody extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
+            //montiring
             InkWell(
               onTap: () {},
               child: const CustomUserRole(

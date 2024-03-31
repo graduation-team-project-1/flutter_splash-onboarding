@@ -23,7 +23,6 @@ class LastPeriodSection extends StatelessWidget {
               .setRoleValue(value: "fristDay");
           get_value.Get.to(
             const DateRole(),
-            transition: get_value.Transition.zoom,
           );
         },
         fontSize: 16,

@@ -1,6 +1,7 @@
 import 'package:app/core/resource/assets.dart';
 import 'package:app/core/resource/color_manager.dart';
 import 'package:app/core/resource/styles.dart';
+import 'package:app/core/resource/values_manage.dart';
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -25,13 +26,12 @@ class _PickDateState extends State<PickDate> {
       dialogSize: const Size(325, 400),
       dialogBackgroundColor: const Color.fromARGB(255, 219, 205, 226),
     );
-    print(date);
     if ((date?.isEmpty) == true || date == null) {
-      print("this is message is false $date");
     } else {
       setState(() {
         dateTime = date[0] ?? dateTime;
-        print("this is message is true $dateTime");
+        ConstantApp.weekValue = dateTime ;
+        print("this is week value for app ${ConstantApp.weekValue}");
       });
     }
   }
@@ -60,11 +60,10 @@ class _PickDateState extends State<PickDate> {
         ),
         hintText: dateTime.toString().split(" ")[0],
         suffixIcon: IconButton(
-          onPressed: () {
-            _date();
-          },
-          icon: SvgPicture.asset(ImagesPath.calender)
-        ),
+            onPressed: () {
+              _date();
+            },
+            icon: SvgPicture.asset(ImagesPath.calender)),
       ),
     );
   }
