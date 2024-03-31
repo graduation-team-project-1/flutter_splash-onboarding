@@ -57,26 +57,6 @@ class KeyValues {
 
 class ConstantApp {
   static late DateTime weekValue;
-
-  DateTime changeDateTime() {
-    // we need the pregenant enter the start preg date and the expected date for born 
-
-    // mon 3 , will preg in mon 9 => 
-   /**
-    * هيا مسجله في شهر 3 و هتولد في شهر 9 كدا 
-    هيا لسلها = 9 - 3 = 6 شهور في الحمل 
-    3 = 6 - هتطرح المده دي من فتره الحمل الاساسيه اللي هيا 9 شهور= 9 
-    كدا عندنا 
-    حامل بقلها => 3 شهور
-    
-
-    */
-
-    // her we  add a new day 
-    DateTime.now().add(
-      const Duration(days: 1),
-    );
-  }
 }
 
 const testStringDescription =
