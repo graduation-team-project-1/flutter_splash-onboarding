@@ -8,6 +8,7 @@ import 'package:app/features/auth/login/view/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'package:app/features/pregnant_home/view/pregnant_home_view.dart';
 import 'custom_indicator.dart';
 import 'custom_page_view.dart';
 
@@ -66,6 +67,9 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                     Get.to(
                       () => const LoginView(),
                     );
+                    Get.to(() => const PregnantHomeView(),
+                        transition: Transition.zoom,
+                        duration: const Duration(milliseconds: 600));
                   },
                   backgroundColor: ColorManager.whiteColor,
                   textColor: ColorManager.mainColor,
@@ -85,6 +89,9 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                       Get.to(
                         () => const LoginView(),
                       );
+                      Get.to(() => const PregnantHomeView(),
+                          transition: Transition.rightToLeft,
+                          duration: const Duration(milliseconds: 600));
                     }
                   },
                   buttonTitle: pageController!.hasClients
