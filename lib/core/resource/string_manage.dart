@@ -30,7 +30,6 @@ class StringManager {
   static const String daysToGo = "days to go!";
   static const String length = "Length";
   static const String kMood = "Mood";
-  static const String mybabyislike = "My baby is like";
   static const String isYourBaby = "Is your baby";
   static const String alreadyBorn = "already born?";
   static const String isYourBabyBorn = "Is your baby already born?";
@@ -81,11 +80,17 @@ class StringManager {
   static const String phoneNumber = "Phone number";
   static const String changePassword = "Change password";
   static const String dueDate = "Due date";
-  static const String dateFormat = "MM/DD/YYYY";
+  static const String dateFormat = "DD/MM/YYYY";
   static const String saveChanges = "Save changes";
   static const String currentPassword = "Current password";
   static const String newPassword = "New password";
   static const String confirmPassword = "Confirm password";
+  static const String gestationalAge = "My gestational age";
+  static const String atThisPoint = "At this point";
+  static const String myBabyIsLike = "My baby is like";
+  static const String passwordChangedSuccessfully = "Password changed successfully";
+  static const String bearerToken =
+      "9|9vF97nzM2UDwkVAc8J5SvggFaUCxhlb5I8x3a5zw593c907d";
 
   String getCurrentFormattedDate() {
     DateTime now = DateTime.now();
@@ -107,6 +112,31 @@ class StringManager {
     }
 
     return currentTrimester;
+  }
+
+  List<String> getListOfWeeks({required int month}) {
+    switch (month) {
+      case 1:
+        return ["0", "1", "2", "3", "4"];
+      case 2:
+        return ["5", "6", "7", "8", "9"];
+      case 3:
+        return ["10", "11", "12", "13"];
+      case 4:
+        return ["14", "15", "16", "17", "18"];
+      case 5:
+        return ["19", "20", "21", "22", "23"];
+      case 6:
+        return ["24", "25", "26", "27"];
+      case 7:
+        return ["28", "29", "30", "31", "32"];
+      case 8:
+        return ["33", "34", "35", "36", "37"];
+      case 9:
+        return ["38", "39", "40"];
+      default:
+        return [];
+    }
   }
 
   static const List<String> typeMedication = [
@@ -149,4 +179,155 @@ class StringManager {
     'Dissatisfied',
     'Scared'
   ];
+  String removeSpecialCharactersAndSpaces(String input) {
+    return input.replaceAll(RegExp(r'\f|\r|\n| '), '');
+  }
+
+  String removeSpecialCharacters(String input) {
+    return input.replaceAll(RegExp(r'\f|\r|\n|'), '');
+  }
+
+  String capitalizeFirstChar(String? input) {
+    if (input == null || input.isEmpty) return "";
+    return input[0].toUpperCase() + input.substring(1).toLowerCase();
+  }
+
+  String getGreeting() {
+    final hour = DateTime.now().hour;
+
+    if (hour >= 5 && hour < 12) {
+      return 'Good Morning';
+    } else if (hour >= 12 && hour < 18) {
+      return 'Good Afternoon';
+    } else {
+      return 'Good Evening';
+    }
+  }
+
+  List<int?> calculatePregnancyDetails(String beginningDateStr) {
+    // Parse the string to a DateTime object
+    DateTime beginningDate = DateTime.parse(beginningDateStr);
+    // Get the current date
+    DateTime currentDate = DateTime.now();
+    // Calculate the difference in days
+    int daysPregnant = currentDate.difference(beginningDate).inDays;
+
+    if (daysPregnant > 280) {
+      return [280, 40, 9, 0, 0, 0];
+    }
+    if (daysPregnant < 7 && daysPregnant >= 0) {
+      return [daysPregnant, 1, 1, 280 - daysPregnant, 40, 9];
+    }
+
+    // Calculate the current week of pregnancy
+    int weeksPregnant = daysPregnant ~/ 7;
+
+    // Calculate the current month of pregnancy more accurately
+    int monthsPregnant = (currentDate.year - beginningDate.year) * 12 +
+        currentDate.month -
+        beginningDate.month;
+
+    if (currentDate.day < beginningDate.day) {
+      monthsPregnant--;
+    }
+
+    // Adjust months if days are more or less than 15
+    int dayDifference = currentDate.day - beginningDate.day;
+    if (dayDifference >= 15) {
+      monthsPregnant++;
+    } else if (dayDifference < -15) {
+      monthsPregnant--;
+    }
+
+    // Calculate the due date
+    DateTime dueDate = beginningDate.add(const Duration(days: 280));
+    // Calculate the difference in days until the due date
+    int daysToDueDate = dueDate.difference(currentDate).inDays;
+    // Calculate the weeks to the due date
+    int weeksToDueDate = daysToDueDate ~/ 7;
+
+    // Calculate the months to the due date more accurately
+    int monthsToDueDate = (dueDate.year - currentDate.year) * 12 +
+        dueDate.month -
+        currentDate.month;
+
+    if (dueDate.day < currentDate.day) {
+      monthsToDueDate--;
+    }
+
+    // Adjust months to due date if days are more or less than 15
+    int dueDayDifference = dueDate.day - currentDate.day;
+    if (dueDayDifference >= 15) {
+      monthsToDueDate++;
+    } else if (dueDayDifference < -15) {
+      monthsToDueDate--;
+    }
+
+    return [
+      daysPregnant,
+      weeksPregnant,
+      monthsPregnant,
+      daysToDueDate,
+      weeksToDueDate,
+      monthsToDueDate
+    ];
+  }
+
+  List<int?> calculateGestationalAge(String? beginningDateStr) {
+    // Check if the input string is null or empty
+    if (beginningDateStr == null || beginningDateStr.isEmpty) {
+      return [null, null];
+    }
+
+    try {
+      // Parse the string to a DateTime object
+      DateTime beginningDate = DateTime.parse(beginningDateStr);
+      // Get the current date
+      DateTime currentDate = DateTime.now();
+      // Calculate the difference in days
+      int daysPregnant = currentDate.difference(beginningDate).inDays;
+
+      // Check if days are more than 280
+      if (daysPregnant > 280) {
+        return [null, null];
+      }
+
+      // Calculate the weeks and days of pregnancy
+      int weeksPregnant = daysPregnant ~/ 7;
+      int daysPregnantRemainder = daysPregnant % 7;
+
+      return [weeksPregnant, daysPregnantRemainder];
+    } catch (e) {
+      // Handle any exceptions that occur during date parsing
+      print('Error parsing date: $e');
+      return [null, null];
+    }
+  }
+
+  String formatDueDate(String dueDate) {
+    if (dueDate != '' && dueDate.isNotEmpty) {
+      final DateTime parsedDate = DateTime.parse(dueDate);
+      final DateFormat formatter = DateFormat('dd MMMM yyyy');
+      return formatter.format(parsedDate);
+    }
+    return '';
+  }
+
+  String getCompletionMessage(int currentWeek) {
+    String completionMessage = '';
+    if (currentWeek >= 1 && currentWeek <= 13) {
+      completionMessage =
+          'Approximately ${(14 - currentWeek)} weeks left in the 1st trimester, Mommy!';
+    } else if (currentWeek >= 14 && currentWeek <= 27) {
+      completionMessage =
+          'Approximately ${(27 - currentWeek)} weeks left in the 2nd trimester, Mommy!';
+    } else if (currentWeek >= 28 && currentWeek <= 40) {
+      completionMessage =
+          'Approximately ${(40 - currentWeek)} weeks left in the 3rd trimester, Mommy!';
+    } else {
+      completionMessage = '';
+    }
+
+    return completionMessage;
+  }
 }

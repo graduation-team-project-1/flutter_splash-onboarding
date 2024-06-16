@@ -4,7 +4,7 @@ import 'package:app/core/resource/font_manager.dart';
 import 'package:app/core/resource/string_manage.dart';
 import 'package:app/core/resource/styles.dart';
 import 'package:app/features/calender/view/widgets/date_time_alarm.dart';
-import 'package:app/features/profile/view/widgets/custom_switch_button.dart';
+import 'package:app/features/profile/presentation/view/widgets/custom_switch_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';

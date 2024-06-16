@@ -121,14 +121,14 @@ class CustomEventItem extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    height: SizeConfig.defultSize! * 8,
+                    height: SizeConfig.defaultSize! * 8,
                     decoration: BoxDecoration(
                       color: determineMainColor(eventModel.type),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsets.only(left: SizeConfig.defultSize! * .8),
+                          EdgeInsets.only(left: SizeConfig.defaultSize! * .8),
                       child: Container(
                         decoration: BoxDecoration(
                           color: determineSecondaryColor(eventModel.type),
@@ -169,14 +169,14 @@ class CustomEventItem extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    height: SizeConfig.defultSize! * 10,
+                    height: SizeConfig.defaultSize! * 10,
                     decoration: BoxDecoration(
                       color: determineMainColor(eventModel.type),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsets.only(left: SizeConfig.defultSize! * .8),
+                          EdgeInsets.only(left: SizeConfig.defaultSize! * .8),
                       child: Container(
                         decoration: BoxDecoration(
                           color: determineSecondaryColor(eventModel.type),
@@ -195,10 +195,10 @@ class CustomEventItem extends StatelessWidget {
                                     Padding(
                                       padding: EdgeInsets.symmetric(
                                           horizontal:
-                                              SizeConfig.defultSize! * .65),
+                                              SizeConfig.defaultSize! * .65),
                                       child: Container(
-                                        height: SizeConfig.defultSize! * 4,
-                                        width: SizeConfig.defultSize! * 8.2,
+                                        height: SizeConfig.defaultSize! * 4,
+                                        width: SizeConfig.defaultSize! * 8.2,
                                         decoration: BoxDecoration(
                                           color: ColorManager.mainColor,
                                           borderRadius:

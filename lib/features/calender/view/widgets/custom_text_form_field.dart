@@ -70,6 +70,8 @@ class CustomTextFormFieldWithoutBackground extends StatelessWidget {
     this.borderWidth,
     this.obscureText,
     this.validator,
+    this.readOnly,
+    this.initialValue,
   });
   final String hintText;
   final String? labelText;
@@ -81,9 +83,13 @@ class CustomTextFormFieldWithoutBackground extends StatelessWidget {
   final double? borderWidth;
   final bool? obscureText;
   final String? Function(String?)? validator;
+  final bool? readOnly;
+  final String? initialValue;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue ?? '',
+      readOnly: readOnly ?? false,
       onChanged: onChanged,
       onSaved: onSaved,
       validator: validator ??

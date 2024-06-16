@@ -56,7 +56,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               ),
             ),
             SizedBox(
-              height: SizeConfig.defultSize! * 2,
+              height: SizeConfig.defaultSize! * 2,
             ),
             CustomeInputFiled(
               hintText: StringManager.registerName,
@@ -65,7 +65,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               isPassword: false,
             ),
             SizedBox(
-              height: SizeConfig.defultSize! * 0.9,
+              height: SizeConfig.defaultSize! * 0.9,
             ),
             CustomeInputFiled(
               hintText: StringManager.registerEmail,
@@ -74,7 +74,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               isPassword: false,
             ),
             SizedBox(
-              height: SizeConfig.defultSize! * 0.9,
+              height: SizeConfig.defaultSize! * 0.9,
             ),
             CustomeInputFiled(
               hintText: StringManager.password,
@@ -83,7 +83,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               isPassword: true,
             ),
             SizedBox(
-              height: SizeConfig.defultSize! * 0.9,
+              height: SizeConfig.defaultSize! * 0.9,
             ),
             Row(
               children: [
@@ -106,7 +106,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
               ],
             ),
             SizedBox(
-              height: SizeConfig.defultSize! * 0.9,
+              height: SizeConfig.defaultSize! * 0.9,
             ),
             SizedBox(
               height: AppSizeManager.s60,

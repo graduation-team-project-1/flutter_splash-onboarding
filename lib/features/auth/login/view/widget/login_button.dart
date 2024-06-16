@@ -1,6 +1,6 @@
 import 'package:app/core/resource/values_manage.dart';
 import 'package:app/core/widgets/custom_button.dart';
-import 'package:app/features/pregnant_home/view/pregnant_home_view.dart';
+import 'package:app/features/pregnant_home/presentation/view/pregnant_home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

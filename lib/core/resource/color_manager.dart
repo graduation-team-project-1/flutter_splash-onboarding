@@ -57,6 +57,7 @@ class ColorManager {
   static const Color seconderPinkColor = Color.fromARGB(30, 185, 154, 200);
   static const Color calenderColor = Color.fromRGBO(214, 199, 221, 1);
   static const Color redColor = Colors.red;
+  static const Color lightPink = Color(0xFFE0479E);
 
   static const Color blurredBackgroundColor = Color(0xFFEFE1EA);
   static const Color textFormFieldColor = Color(0xFFEFE4EE);
@@ -78,6 +79,8 @@ class ColorManager {
   static const Color secondaryBarColor = Color(0xFFEDEDED);
   static const Color ratedStarColor = Color(0xFFFFC978);
   static const Color unratedStarColor = Color(0xFFD9D9D9);
+  static const Color darkPink = Color(0xFF78556E);
+  static const Color pickDateColor = Color(0xFFD5C7DC);
 
   static const Color moreBackgroundColor = Color.fromRGBO(185, 154, 200, 0.15);
 }

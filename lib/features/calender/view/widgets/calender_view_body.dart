@@ -1,10 +1,14 @@
 import 'package:app/core/resource/color_manager.dart';
 import 'package:app/core/resource/font_manager.dart';
 import 'package:app/core/resource/size_config.dart';
+import 'package:app/core/resource/string_manage.dart';
 import 'package:app/core/resource/styles.dart';
 import 'package:app/features/calender/view/widgets/calender_tab.dart';
 import 'package:app/features/calender/view/widgets/events_tab.dart';
+import 'package:app/features/profile/data/models/pregnancy_profile_model.dart';
+import 'package:app/features/profile/presentation/manager/cubits/pregnancy_profile_cubit/pregnancy_profile_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CalenderViewBody extends StatefulWidget {
   const CalenderViewBody({super.key});
@@ -14,11 +18,21 @@ class CalenderViewBody extends StatefulWidget {
 }
 
 class _CalenderViewBodyState extends State<CalenderViewBody> {
+  late PregnancyProfileModel pregnancyProfileModel;
+
   int currentIndex = 0;
-  int currentWeek = 30;
   @override
   void initState() {
     super.initState();
+
+    final pregnancyProfileCubit =
+        BlocProvider.of<PregnancyProfileCubit>(context);
+    final state = pregnancyProfileCubit.state;
+    if (state is PregnancyProfileSuccess) {
+      pregnancyProfileModel = state.pregnancyProfileModel;
+    } else {
+      // Handle error or default case if needed
+    }
   }
 
   @override
@@ -27,12 +41,12 @@ class _CalenderViewBodyState extends State<CalenderViewBody> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-            toolbarHeight: SizeConfig.defultSize! * 10,
+            toolbarHeight: SizeConfig.defaultSize! * 10,
             elevation: 0,
             automaticallyImplyLeading: false,
             title: Center(
               child: Text(
-                "You are $currentWeek weeks pregnant",
+                "You are ${StringManager().calculatePregnancyDetails(pregnancyProfileModel.dueDate ?? '')[1]} weeks pregnant",
                 style: Styles.textStyle20.copyWith(
                     fontFamily: FontType.kRoboto,
                     color: ColorManager.mainColor,
@@ -58,7 +72,9 @@ class _CalenderViewBodyState extends State<CalenderViewBody> {
           children: [
             TabBarView(
               children: [
-                CalendarTab(currentWeek: currentWeek),
+                CalendarTab(
+                  pregnancyProfileCubit: pregnancyProfileModel,
+                ),
                 const EventsTab(),
               ],
             ),

@@ -30,7 +30,7 @@ class _PickDateState extends State<PickDate> {
     } else {
       setState(() {
         dateTime = date[0] ?? dateTime;
-        ConstantApp.weekValue = dateTime ;
+        ConstantApp.weekValue = dateTime;
         print("this is week value for app ${ConstantApp.weekValue}");
       });
     }

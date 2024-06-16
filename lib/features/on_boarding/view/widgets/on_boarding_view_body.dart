@@ -8,7 +8,7 @@ import 'package:app/features/auth/login/view/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:app/features/pregnant_home/view/pregnant_home_view.dart';
+import 'package:app/features/pregnant_home/presentation/view/pregnant_home_view.dart';
 import 'custom_indicator.dart';
 import 'custom_page_view.dart';
 
@@ -45,18 +45,18 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
       children: [
         CustomPageView(pageController: pageController),
         Positioned(
-          bottom: SizeConfig.defultSize! * 21,
-          left: SizeConfig.defultSize! * 13,
-          right: SizeConfig.defultSize! * 13,
+          bottom: SizeConfig.defaultSize! * 21,
+          left: SizeConfig.defaultSize! * 13,
+          right: SizeConfig.defaultSize! * 13,
           child: CustomIndicator(
             currentDotIndex:
                 pageController!.hasClients ? pageController?.page : 0,
           ),
         ),
         Positioned(
-          left: SizeConfig.defultSize! * 3,
-          right: SizeConfig.defultSize! * 3,
-          bottom: SizeConfig.defultSize! * 10,
+          left: SizeConfig.defaultSize! * 3,
+          right: SizeConfig.defaultSize! * 3,
+          bottom: SizeConfig.defaultSize! * 10,
           child: Row(
             children: [
               Expanded(
