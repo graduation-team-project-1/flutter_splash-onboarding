@@ -4,29 +4,37 @@ import 'package:app/features/main/more/presentation/view/widget/more_view_body.d
 import 'package:flutter/material.dart';
 
 class MoreView extends StatelessWidget {
-  const MoreView({super.key});
-
+  const MoreView({super.key, this.isBoy});
+  final bool? isBoy;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
           "More",
-          style:
-              Styles.robotoTextStyle20.copyWith(color: ColorManager.mainColor),
+          style: Styles.robotoTextStyle20.copyWith(
+            color: (isBoy == null)
+                ? ColorManager.mainColor
+                : (isBoy == true
+                    ? ColorManager.boyBabyName
+                    : ColorManager.girlBabyName),
+          ),
         ),
-        actions: const [
+        actions:  [
           Padding(
             padding: EdgeInsets.only(right: 10),
             child: Icon(
               Icons.settings,
-              color: ColorManager.mainColor,
+              color:  (isBoy == null)
+                ? ColorManager.mainColor
+                : (isBoy == true
+                    ? ColorManager.boyBabyName
+                    : ColorManager.girlBabyName),
             ),
           ),
         ],
       ),
-      body: const MoreViewBody(),
+      body:  MoreViewBody(isBoy: isBoy,),
     );
   }
 }
-

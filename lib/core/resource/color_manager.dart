@@ -80,6 +80,17 @@ class ColorManager {
   static const Color unratedStarColor = Color(0xFFD9D9D9);
 
   static const Color moreBackgroundColor = Color.fromRGBO(185, 154, 200, 0.15);
+
+  static const Color boyBabyName = Color(0xff79A8F0);
+  static const Color boyBabybackGround = Color.fromARGB(80, 121, 169, 240);
+
+  static const Color girlBabyName = Color(0xffF4ACC4);
+  static const Color girlBabybackGround = Color.fromARGB(80, 244, 172, 196);
+
+  static const Color faviourteBabyName = Color.fromARGB(255, 201, 105, 249);
+  static const Color faviourteBabybackGround = Color.fromARGB(80, 184, 90, 231);
+
+  static const Color babyDescriptionName = Color(0xff979797);
 }
 
 Color determineMainColor(String type) {

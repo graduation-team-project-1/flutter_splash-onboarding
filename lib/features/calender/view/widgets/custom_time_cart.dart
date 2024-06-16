@@ -11,12 +11,12 @@ import 'package:intl/intl.dart';
 
 class CustomDateAndTimeCart extends StatefulWidget {
   const CustomDateAndTimeCart({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.selectedDateAndTime,
     required this.onCheckedChanged,
     required this.checked,
-  }) : super(key: key);
+  });
 
   final VoidCallback onTap;
   final DateTime selectedDateAndTime;

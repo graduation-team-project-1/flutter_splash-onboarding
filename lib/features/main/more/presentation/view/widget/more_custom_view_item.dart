@@ -1,4 +1,3 @@
-
 import 'package:app/core/resource/color_manager.dart';
 import 'package:app/core/resource/styles.dart';
 import 'package:flutter/material.dart';
@@ -10,26 +9,36 @@ class CustomItemMoreScreen extends StatelessWidget {
     required this.itemName,
     required this.itemImage,
     required this.onPressed,
+     this.isBoy,
   });
   final String itemName;
   final String itemImage;
   final VoidCallback onPressed;
+  final bool? isBoy;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        width: 312,
-        height: 184,
+        width: MediaQuery.of(context).size.width / 2,
+        height: MediaQuery.of(context).size.height / 4,
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              color: ColorManager.mainColor,
+            side: BorderSide(
+              color: (isBoy == null)
+                  ? ColorManager.mainColor
+                  : (isBoy == true
+                      ? ColorManager.boyBabyName
+                      : ColorManager.girlBabyName),
               width: 2,
             ),
             borderRadius: BorderRadius.circular(15),
           ),
-          color: ColorManager.moreBackgroundColor,
+          color:(isBoy == null)
+                  ? ColorManager.moreBackgroundColor
+                  : (isBoy == true
+                      ? ColorManager.boyBabybackGround
+                      : ColorManager.girlBabybackGround),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +54,11 @@ class CustomItemMoreScreen extends StatelessWidget {
             Text(
               itemName,
               style: Styles.textStyle24.copyWith(
-                color: ColorManager.mainColor,
+                color: (isBoy == null)
+                    ? ColorManager.mainColor
+                    : (isBoy == true
+                        ? ColorManager.boyBabyName
+                        : ColorManager.girlBabyName),
               ),
             ),
           ],

@@ -35,11 +35,12 @@ class _CustomSwitchState extends State<CustomSwitch> {
 }
 
 class CustomSwitchButtonWithAlert extends StatefulWidget {
-  const CustomSwitchButtonWithAlert(
-      {super.key,
-      required this.title,
-      required this.navigationScreen,
-      required this.navigationWithNavBar});
+  const CustomSwitchButtonWithAlert({
+    super.key,
+    required this.title,
+    required this.navigationScreen,
+    required this.navigationWithNavBar,
+  });
   final String title;
   final Widget navigationScreen;
   final bool navigationWithNavBar;

@@ -15,7 +15,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+  const LoginViewBody({Key? key}) : super(key: key);
 
   @override
   State<LoginViewBody> createState() => _LoginViewBodyState();

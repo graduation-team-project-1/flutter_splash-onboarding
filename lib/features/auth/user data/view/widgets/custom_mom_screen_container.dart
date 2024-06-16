@@ -29,7 +29,8 @@ class CustomMomContainer extends StatelessWidget {
       child: InkWell(
         onTap: () {
           Get.to(
-            const BabyData(),
+            BabyData(isBoy: title == "Boy"),
+            // BabyData()
           );
         },
         child: Stack(

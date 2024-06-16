@@ -53,6 +53,8 @@ class AppSizeManager {
 class KeyValues {
   static const String onBoardingItemKey = "OnBoardingValueKey";
   static const String savedItemKey = "SavedValueKey";
+  static const String boyNamesKey = "BoyNamesKey";
+  static const String girlNamesKey = "GirlNamesKey";
 }
 
 class ConstantApp {

@@ -1,12 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
 import 'package:app/core/resource/assets.dart';
 import 'package:app/features/auth/user%20data/view/widgets/baby_birth_date.dart';
 import 'package:app/features/auth/user%20data/view/widgets/baby_continue_button.dart';
 import 'package:app/features/auth/user%20data/view/widgets/baby_name_input.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class BabyDataBody extends StatelessWidget {
-  const BabyDataBody({super.key});
+  const BabyDataBody({
+    Key? key,
+    required this.isBoy,
+  }) : super(key: key);
+
+  final bool isBoy;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +38,9 @@ class BabyDataBody extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const ContinueButton()
+          ContinueButton(
+            isBoy: isBoy,
+          )
         ],
       ),
     );

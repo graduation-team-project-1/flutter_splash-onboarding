@@ -81,20 +81,23 @@ class CustomAppBarWithDelete extends StatelessWidget {
 }
 
 class CustomHomeAppBar extends StatelessWidget {
-  const CustomHomeAppBar(
-      {super.key,
-      required this.title,
-      required this.subTitle,
-      required this.imagePath,
-      required this.hasNotifcation,
-      required this.onTap,
-      required this.onImageTap});
+  const CustomHomeAppBar({
+    super.key,
+    required this.title,
+    required this.subTitle,
+    required this.imagePath,
+    required this.hasNotifcation,
+    required this.onTap,
+    required this.onImageTap,
+    required this.styleValue
+  });
   final String title;
   final String subTitle;
   final String imagePath;
   final bool hasNotifcation;
   final VoidCallback onTap;
   final VoidCallback onImageTap;
+  final TextStyle styleValue;
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -102,14 +105,15 @@ class CustomHomeAppBar extends StatelessWidget {
       leading: GestureDetector(
         onTap: onImageTap,
         child: CircleAvatar(
-            radius: 35,
-            backgroundImage: CachedNetworkImageProvider(
-              imagePath,
-            )),
+          radius: 35,
+          backgroundImage: CachedNetworkImageProvider(
+            imagePath,
+          ),
+        ),
       ),
       title: Text(
         title,
-        style: Styles.textStyle18.copyWith(color: ColorManager.mainColor),
+        style: styleValue,
       ),
       subtitle: Text(subTitle,
           style: Styles.textStyle16.copyWith(

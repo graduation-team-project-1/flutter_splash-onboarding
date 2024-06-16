@@ -67,7 +67,7 @@ import 'package:app/core/resource/color_manager.dart';
 import 'package:app/core/resource/size_config.dart';
 import 'package:app/core/resource/string_manage.dart';
 import 'package:app/core/resource/styles.dart';
-import 'package:app/features/pregnant_home/view/widgets/article_item_view.dart';
+import 'package:app/features/auth/user%20data/view/mom_role.dart';
 import 'package:app/features/profile/view/widgets/custom_switch_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -93,21 +93,23 @@ class _BabyBornCheckedCardState extends State<BabyBornCheckedCard> {
       ),
       child: Center(
         child: ListTile(
-            leading: SvgPicture.asset(ImagesPath.babyCheckIcon),
-            title: Text(
-              StringManager.isYourBaby,
-              style: Styles.textStyle18.copyWith(
-                  color: ColorManager.mainColor, fontWeight: FontWeight.w500),
-            ),
-            subtitle: Text(
-              StringManager.alreadyBorn,
-              style: Styles.textStyle18.copyWith(
-                  color: ColorManager.mainColor, fontWeight: FontWeight.w500),
-            ),
-            trailing: const CustomSwitchButtonWithAlert(
-                title: StringManager.isYourBabyBorn,
-                navigationScreen: ArticleItemView(),
-                navigationWithNavBar: false)),
+          leading: SvgPicture.asset(ImagesPath.babyCheckIcon),
+          title: Text(
+            StringManager.isYourBaby,
+            style: Styles.textStyle18.copyWith(
+                color: ColorManager.mainColor, fontWeight: FontWeight.w500),
+          ),
+          subtitle: Text(
+            StringManager.alreadyBorn,
+            style: Styles.textStyle18.copyWith(
+                color: ColorManager.mainColor, fontWeight: FontWeight.w500),
+          ),
+          trailing: const CustomSwitchButtonWithAlert(
+            title: StringManager.isYourBabyBorn,
+            navigationScreen: MomRole(),
+            navigationWithNavBar: false,
+          ),
+        ),
       ),
     );
   }

@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ArticlesScreenBody extends StatelessWidget {
-  const ArticlesScreenBody({super.key});
+  const ArticlesScreenBody({super.key,this.isBoy});
+  final bool? isBoy;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,11 @@ class ArticlesScreenBody extends StatelessWidget {
             Text(
               "Articles",
               style: Styles.textStyle20.copyWith(
-                color: ColorManager.pinkColor,
+                color: (isBoy == null)
+                  ? ColorManager.mainColor
+                  : (isBoy == true
+                      ? ColorManager.boyBabyName
+                      : ColorManager.girlBabyName),
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.start,

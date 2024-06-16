@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomDateCart extends StatelessWidget {
-  const CustomDateCart({Key? key, required this.onTap}) : super(key: key);
+  const CustomDateCart({super.key, required this.onTap});
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {

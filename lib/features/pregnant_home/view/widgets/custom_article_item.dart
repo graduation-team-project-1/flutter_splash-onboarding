@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class CustomArticleItem extends StatefulWidget {
-  const CustomArticleItem({super.key});
-
+  const CustomArticleItem({super.key, this.isBoy});
+  final bool? isBoy;
   @override
   State<CustomArticleItem> createState() => _CustomArticleItemState();
 }
@@ -23,7 +23,9 @@ class _CustomArticleItemState extends State<CustomArticleItem> {
       onTap: () {
         PersistentNavBarNavigator.pushNewScreen(
           context,
-          screen: const ArticleItemView(),
+          screen: ArticleItemView(
+            isBoy: widget.isBoy,
+          ),
           withNavBar: false,
           pageTransitionAnimation: PageTransitionAnimation.cupertino,
         );
@@ -55,7 +57,11 @@ class _CustomArticleItemState extends State<CustomArticleItem> {
                 "Difficulty sleeping",
                 maxLines: 1,
                 style: Styles.textStyle18.copyWith(
-                    color: ColorManager.mainColor,
+                    color: (widget.isBoy == null)
+                        ? ColorManager.mainColor
+                        : (widget.isBoy == true
+                            ? ColorManager.boyBabyName
+                            : ColorManager.girlBabyName),
                     overflow: TextOverflow.ellipsis),
               ),
             ),

@@ -3,7 +3,7 @@ import 'package:app/features/auth/forget%20password/view/widgets/otp_code_body.d
 import 'package:flutter/material.dart';
 
 class OtpPage extends StatelessWidget {
-  const OtpPage({super.key});
+  const OtpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

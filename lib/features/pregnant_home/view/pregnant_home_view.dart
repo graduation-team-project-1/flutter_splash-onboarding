@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PregnantHomeView extends StatelessWidget {
-  const PregnantHomeView({super.key});
-
+  const PregnantHomeView({super.key,  this.isBoy});
+  final bool? isBoy;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider(
         create: (context) => EventsCubit(),
-        child: const PregnantHomeViewBody(),
+        child:  PregnantHomeViewBody(isBoy: isBoy,),
       ),
     );
   }

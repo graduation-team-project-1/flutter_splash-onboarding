@@ -108,12 +108,8 @@ class SpacificScreenRow extends StatelessWidget {
               onPressed: () {
                 if (favoriteCubit.favorites.contains(item)) {
                   favoriteCubit.removeFromFavorites(item);
-                  print(
-                      "this is length for array ${favoriteCubit.favorites.length}");
                 } else {
                   favoriteCubit.addToFavorites(item);
-                  print(
-                      "this is length for array ${favoriteCubit.favorites.length}");
                 }
               },
               icon: BlocBuilder<SavedUnsavedCubit, SavedUnsavedState>(
