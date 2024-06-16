@@ -24,17 +24,19 @@ class PageViewItem extends StatelessWidget {
         // Spacer(flex: 2),
         const VerticalSpace(10),
         SizedBox(
-          height: SizeConfig.defultSize! * 30,
+          height: SizeConfig.defaultSize! * 30,
           child: SvgPicture.asset(imagePath),
         ),
         const VerticalSpace(5),
-        GradientText(title,
-            style: Styles.textStyle24,
-            gradient: ColorManager.primaryColorGradient),
+        GradientText(
+          text: title,
+          style: Styles.textStyle24,
+          gradient: ColorManager.primaryColorGradient,
+        ),
 
         const VerticalSpace(2),
         SizedBox(
-          width: SizeConfig.defultSize! * 35,
+          width: SizeConfig.defaultSize! * 35,
           child: Text(
             subTitle,
             style: Styles.textStyle14,

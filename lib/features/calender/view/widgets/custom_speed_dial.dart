@@ -23,7 +23,7 @@ class CustomSpeedDial extends StatelessWidget {
     return SpeedDial(
       activeIcon: Icons.clear,
       buttonSize:
-          Size(SizeConfig.defultSize! * 6.8, SizeConfig.defultSize! * 6.8),
+          Size(SizeConfig.defaultSize! * 6.8, SizeConfig.defaultSize! * 6.8),
       visible: true,
       closeManually: false,
       renderOverlay: true,
@@ -104,8 +104,8 @@ class CustomSpeedDial extends StatelessWidget {
         ),
       ],
       child: Container(
-        height: SizeConfig.defultSize! * 6.8,
-        width: SizeConfig.defultSize! * 6.8,
+        height: SizeConfig.defaultSize! * 6.8,
+        width: SizeConfig.defaultSize! * 6.8,
         decoration: const BoxDecoration(
             gradient: ColorManager.buttonColorGradient, shape: BoxShape.circle),
         child: const Icon(Icons.add),

@@ -37,8 +37,8 @@ class _CustomDateAndTimePickerState extends State<CustomDateAndTimePicker> {
           ),
         ],
       ),
-      width: SizeConfig.defultSize! * 33,
-      height: SizeConfig.defultSize! * 22,
+      width: SizeConfig.defaultSize! * 33,
+      height: SizeConfig.defaultSize! * 22,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: CupertinoDatePicker(

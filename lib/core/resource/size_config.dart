@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SizeConfig {
   static double? screenWidth;
   static double? screenHeight;
-  static double? defultSize;
+  static double? defaultSize;
   static Orientation? orientation;
 
   void init(BuildContext context) {
@@ -11,7 +11,7 @@ class SizeConfig {
     screenHeight = MediaQuery.of(context).size.height;
     orientation = MediaQuery.of(context).orientation;
 
-    defultSize = orientation == Orientation.landscape
+    defaultSize = orientation == Orientation.landscape
         ? screenHeight! * .024
         : screenWidth! * .024;
     // print('this is the default size $defultSize');

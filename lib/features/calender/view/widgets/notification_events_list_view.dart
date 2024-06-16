@@ -79,7 +79,7 @@
 //     });
 //   }
 // }
-import 'package:app/features/profile/models/is_notification_model.dart';
+import 'package:app/features/profile/data/models/is_notification_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -140,8 +140,8 @@ class _NotificationEventListViewState extends State<NotificationEventListView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<EventsCubit, EventsState>(builder: (context, state) {
-      List<EventModel> events = BlocProvider.of<EventsCubit>(context).events!;
+      return BlocBuilder<EventsCubit, EventsState>(builder: (context, state) {
+        List<EventModel> events = BlocProvider.of<EventsCubit>(context).events!;
 
       return Padding(
         padding: const EdgeInsets.all(8.0),

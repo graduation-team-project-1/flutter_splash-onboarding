@@ -7,7 +7,7 @@ class HorizintalSpace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: SizeConfig.defultSize! * value!,
+      width: SizeConfig.defaultSize! * value!,
     );
   }
 }
@@ -19,7 +19,7 @@ class VerticalSpace extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height:
-          SizeConfig.defultSize != null ? SizeConfig.defultSize! * value! : 0,
+          SizeConfig.defaultSize != null ? SizeConfig.defaultSize! * value! : 0,
     );
   }
 }

@@ -1,7 +1,3 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500,
-    "dart.flutterHotReloadOnSave": "all",
-    "dart.hotReloadOnSave": "all"
+  "C_Cpp_Runner.msvcBatchPath": ""
 }

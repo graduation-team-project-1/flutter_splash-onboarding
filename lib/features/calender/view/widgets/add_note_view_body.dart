@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class AddNoteViewBody extends StatefulWidget {
-  const AddNoteViewBody({Key? key}) : super(key: key);
+  const AddNoteViewBody({super.key});
 
   @override
   State<AddNoteViewBody> createState() => _AddNoteViewBodyState();

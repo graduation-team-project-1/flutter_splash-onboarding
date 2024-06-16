@@ -1,0 +1,123 @@
+[33mcommit 0aa7d455e04adb69df912be1c1be0eaf4321122f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mauth_branch[m[33m)[m
+Author: kerlos maged <kerlosmaged55@gmail.com>
+Date:   Tue Jan 23 03:51:08 2024 +0200
+
+    auth screen first version
+
+[33mcommit 23f6acf322bf8b8ed629302fc921fc8139a1861d[m[33m ([m[1;31morigin/auth_branch[m[33m)[m
+Author: kerlos maged <kerlosmaged55@gmail.com>
+Date:   Thu Nov 30 20:34:03 2023 +0200
+
+    remove test2
+
+[33mcommit 6ff5033adca0de0a8e0c24532be17d9f0569d241[m
+Author: kerlos maged <kerlosmaged55@gmail.com>
+Date:   Thu Nov 30 20:33:33 2023 +0200
+
+    remove new_test
+
+[33mcommit 0dd52d132b94e3d99ef2823eef8e1981c59fae25[m
+Author: kerlos maged <kerlosmaged55@gmail.com>
+Date:   Thu Nov 30 20:32:48 2023 +0200
+
+    remove new_test
+
+[33mcommit a04578fe7adf190459cb44bfdde1fb32d714ca2c[m
+Author: kerlos maged <kerlosmaged55@gmail.com>
+Date:   Thu Nov 30 20:30:03 2023 +0200
+
+    delete deleat this.dart
+
+[33mcommit 0dace77d86053e700f7e4aba12c16a86b365ebd3[m
+Merge: eb287b2 1c49b57
+Author: OsamaDebsa <121144631+OsamaDebsa@users.noreply.github.com>
+Date:   Thu Nov 30 19:41:35 2023 +0200
+
+    Merge pull request #6 from graduation-team-project-1/deleat
+    
+    deleate
+
+[33mcommit 1c49b5757d80cbf7f878fa9e79781a575f7f6aee[m
+Author: OsamaDebsa <osamas1616@gmail.com>
+Date:   Thu Nov 30 19:38:37 2023 +0200
+
+    deleate
+
+[33mcommit eb287b24e3a57916631d0894e68c15341b611c3c[m
+Merge: 39729e2 aa6627c
+Author: kerlos maged <88886998+kerlosmaged@users.noreply.github.com>
+Date:   Thu Nov 30 19:29:51 2023 +0200
+
+    Merge pull request #5 from graduation-team-project-1/new_test
+    
+    this is new test
+
+[33mcommit aa6627c632f9b25c7a6413b344fb9c223aac476d[m
+Author: kerlos maged <kerlosmaged55@gmail.com>
+Date:   Thu Nov 30 19:29:13 2023 +0200
+
+    this is new test
+
+[33mcommit 39729e26a86530ad2ed8870bbd977ac67b5917d2[m
+Merge: bfa3eb4 8dc438b
+Author: OsamaDebsa <121144631+OsamaDebsa@users.noreply.github.com>
+Date:   Thu Nov 30 19:25:41 2023 +0200
+
+    Merge pull request #4 from graduation-team-project-1/test-ay-haga
+    
+    Test ay haga
+
+[33mcommit 8dc438bd8f18d28144c47b2492d9ed688d15066a[m
+Merge: ebfc233 0233682
+Author: OsamaDebsa <121144631+OsamaDebsa@users.noreply.github.com>
+Date:   Thu Nov 30 19:24:13 2023 +0200
+
+    Merge pull request #3 from graduation-team-project-1/final-test
+
+[33mcommit 0233682af09bc1c92f59de4a86df16bafe366d28[m
+Author: OsamaDebsa <osamas1616@gmail.com>
+Date:   Thu Nov 30 19:22:37 2023 +0200
+
+    test 2 final test
+
+[33mcommit ebfc233a4ed2683cb60741ed6c4e79986b8cb2f8[m
+Author: OsamaDebsa <osamas1616@gmail.com>
+Date:   Thu Nov 30 19:17:07 2023 +0200
+
+    test comit ay haga
+
+[33mcommit bfa3eb4720b6c2486dcceff4fdbb8afb51b88a6d[m
+Merge: 0828186 493f6cb
+Author: kerlos maged <88886998+kerlosmaged@users.noreply.github.com>
+Date:   Thu Nov 30 18:49:53 2023 +0200
+
+    Merge pull request #2 from graduation-team-project-1/file-new
+    
+    remove data from constants file
+
+[33mcommit 493f6cbd1aab857fafd7b18a0fe731fca18384b8[m
+Author: kerlos maged <kerlosmaged55@gmail.com>
+Date:   Thu Nov 30 18:44:20 2023 +0200
+
+    remove data from constants file
+
+[33mcommit 0828186b140b4b3c57e3ca9ef8ff8a1658b4c10d[m
+Merge: bc0fb1a d809413
+Author: kerlos maged <88886998+kerlosmaged@users.noreply.github.com>
+Date:   Thu Nov 30 18:17:07 2023 +0200
+
+    Merge pull request #1 from graduation-team-project-1/test
+    
+    test column
+
+[33mcommit d809413bf7255e38f427d92d2d01dac0b2ff2656[m
+Author: OsamaDebsa <osamas1616@gmail.com>
+Date:   Thu Nov 30 18:15:14 2023 +0200
+
+    test column
+
+[33mcommit bc0fb1ab19011a1149b4f1ba3dac5550d987c713[m
+Author: Osama Debsa <osamas1616@gmail.com>
+Date:   Thu Nov 30 08:15:02 2023 +0200
+
+    first version
