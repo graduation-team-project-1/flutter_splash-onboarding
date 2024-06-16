@@ -10,49 +10,90 @@ import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class PregnantHomeViewBody extends StatelessWidget {
-  const PregnantHomeViewBody({super.key});
+  const PregnantHomeViewBody({super.key, this.isBoy});
+  final bool? isBoy;
 
   @override
   Widget build(BuildContext context) {
     List<Widget> buildScreens() {
       return [
-        const PregnantHomeViewBodyContent(),
+        PregnantHomeViewBodyContent(isBoy: isBoy),
         const CalenderView(),
-        const ArticlesScreen(),
-        const MoreView(),
+         ArticlesScreen(isBoy: isBoy,),
+         MoreView(isBoy:isBoy),
       ];
     }
 
     List<PersistentBottomNavBarItem> navBarsItems() {
       return [
         PersistentBottomNavBarItem(
-          icon: SvgPicture.asset(ImagesPath.homeIcon,
-              color: ColorManager.mainColor),
+          icon: SvgPicture.asset(
+            ImagesPath.homeIcon,
+            color: isBoy == null
+                ? ColorManager.mainColor
+                : (isBoy == true
+                    ? ColorManager.boyColor
+                    : ColorManager.girlBabyName),
+          ),
           inactiveIcon: SvgPicture.asset(ImagesPath.homeIcon),
           title: ("Home"),
-          activeColorPrimary: ColorManager.mainColor,
+          activeColorPrimary: isBoy == null
+              ? ColorManager.mainColor
+              : (isBoy == true
+                  ? ColorManager.boyColor
+                  : ColorManager.girlBabyName),
           //   inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          icon: SvgPicture.asset(ImagesPath.calenderIcon,
-              color: ColorManager.mainColor),
+          icon: SvgPicture.asset(
+            ImagesPath.calenderIcon,
+            color: isBoy == null
+                ? ColorManager.mainColor
+                : (isBoy == true
+                    ? ColorManager.boyColor
+                    : ColorManager.girlBabyName),
+          ),
           inactiveIcon: SvgPicture.asset(ImagesPath.calenderIcon),
           title: ("Calendar"),
-          activeColorPrimary: ColorManager.mainColor,
+          activeColorPrimary: isBoy == null
+              ? ColorManager.mainColor
+              : (isBoy == true
+                  ? ColorManager.boyColor
+                  : ColorManager.girlBabyName),
           //   inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-            icon: SvgPicture.asset(ImagesPath.articelsIcon,
-                color: ColorManager.mainColor),
+            icon: SvgPicture.asset(
+              ImagesPath.articelsIcon,
+              color: isBoy == null
+                  ? ColorManager.mainColor
+                  : (isBoy == true
+                      ? ColorManager.boyColor
+                      : ColorManager.girlBabyName),
+            ),
             title: ("Articles"),
-            activeColorPrimary: ColorManager.mainColor,
+            activeColorPrimary: isBoy == null
+                ? ColorManager.mainColor
+                : (isBoy == true
+                    ? ColorManager.boyColor
+                    : ColorManager.girlBabyName),
             inactiveIcon: SvgPicture.asset(ImagesPath.articelsIcon)),
         PersistentBottomNavBarItem(
-          icon: SvgPicture.asset(ImagesPath.moreIcon,
-              color: ColorManager.mainColor),
+          icon: SvgPicture.asset(
+            ImagesPath.moreIcon,
+            color: isBoy == null
+                ? ColorManager.mainColor
+                : (isBoy == true
+                    ? ColorManager.boyColor
+                    : ColorManager.girlBabyName),
+          ),
           inactiveIcon: SvgPicture.asset(ImagesPath.moreIcon),
           title: ("More"),
-          activeColorPrimary: ColorManager.mainColor,
+          activeColorPrimary: isBoy == null
+              ? ColorManager.mainColor
+              : (isBoy == true
+                  ? ColorManager.boyColor
+                  : ColorManager.girlBabyName),
           //   inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
       ];

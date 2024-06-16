@@ -5,6 +5,7 @@ part 'saved_unsaved_state.dart';
 
 class SavedUnsavedCubit extends Cubit<SavedUnsavedState> {
   SavedUnsavedCubit() : super(SavedUnsavedInitial());
+  
   final List<ItemModel> _favorites = [];
 
   List get favorites => _favorites;

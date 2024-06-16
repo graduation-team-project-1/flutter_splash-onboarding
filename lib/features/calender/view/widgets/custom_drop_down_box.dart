@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 
 class CustomDropDownBox extends StatefulWidget {
   const CustomDropDownBox(
-      {Key? key,
+      {super.key,
       required this.options,
       required this.label,
       required this.onValueChanged,
-      required this.selectedValue})
-      : super(key: key);
+      required this.selectedValue});
 
   final List<String> options;
   final String label;

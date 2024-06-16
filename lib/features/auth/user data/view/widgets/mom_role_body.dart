@@ -42,7 +42,7 @@ class MomRoleBody extends StatelessWidget {
             height: 20,
           ),
           const CustomMomContainer(
-            title: "boy",
+            title: "Boy",
             backgroundColor: ColorManager.boyColor,
             imageUrl: ImagesPath.boy,
           ),

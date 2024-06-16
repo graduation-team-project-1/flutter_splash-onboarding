@@ -1,7 +1,9 @@
 import 'package:app/core/resource/assets.dart';
 import 'package:app/core/resource/styles.dart';
 import 'package:app/features/main/article/presentation/view/widgets/spacific_screen_body.dart';
+import 'package:app/features/main/article/presentation/viewmodel/cubits/saved_unsaved/saved_unsaved_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart%20';
 
@@ -27,7 +29,10 @@ class SpacificItemScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: const SpacificScreenBody(),
+      body: BlocProvider.value(
+        value: SavedUnsavedCubit(),
+        child: SpacificScreenBody(),
+      ),
     );
   }
 }

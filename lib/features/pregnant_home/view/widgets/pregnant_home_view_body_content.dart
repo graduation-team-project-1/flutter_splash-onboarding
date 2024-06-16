@@ -1,5 +1,9 @@
+import 'package:app/core/resource/color_manager.dart';
 import 'package:app/core/resource/size_config.dart';
+import 'package:app/core/resource/styles.dart';
 import 'package:app/core/widgets/space_widget.dart';
+import 'package:app/features/baby_home/view/widget/home/baby_daies_counter.dart';
+import 'package:app/features/baby_home/view/widget/home/home_alert.dart';
 import 'package:app/features/calender/cubits/events_cubit/events_cubit.dart';
 import 'package:app/features/calender/models/event_model.dart';
 import 'package:app/features/calender/view/calender_view.dart';
@@ -16,7 +20,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class PregnantHomeViewBodyContent extends StatelessWidget {
-  const PregnantHomeViewBodyContent({super.key});
+  const PregnantHomeViewBodyContent({super.key, this.isBoy});
+  final bool? isBoy;
 
   bool hasNotification(List<EventModel> events) {
     for (EventModel event in events) {
@@ -27,71 +32,113 @@ class PregnantHomeViewBodyContent extends StatelessWidget {
     return false;
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
     List<EventModel> events =
         BlocProvider.of<EventsCubit>(context).events ?? [];
-    // BlocProvider.of<EventsCubit>(context).fetchAllEvents();
 
     return Scaffold(
-        appBar: AppBar(
-          toolbarHeight: SizeConfig.defultSize! * 10,
-          elevation: 0,
-          automaticallyImplyLeading: false,
-          title: CustomHomeAppBar(
-            onImageTap: () {
-              PersistentNavBarNavigator.pushNewScreen(
-                context,
-                screen: const ProfileView(),
-                withNavBar: false,
-                pageTransitionAnimation: PageTransitionAnimation.sizeUp,
-              );
-            },
-            title: "Hi, Shifaa",
-            subTitle: "Good Morning",
-            imagePath:
-                "https://i.pinimg.com/originals/f3/8d/bc/f38dbcbab1e30643e05f5b9caa8aaa39.jpg",
-            hasNotifcation: hasNotification(events),
-            onTap: () {
-              PersistentNavBarNavigator.pushNewScreen(
-                context,
-                screen: const CalenderView(),
-                withNavBar: true,
-                pageTransitionAnimation: PageTransitionAnimation.sizeUp,
-              );
-            },
+      appBar: AppBar(
+        toolbarHeight: SizeConfig.defultSize! * 10,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        title: CustomHomeAppBar(
+          onImageTap: () {
+            PersistentNavBarNavigator.pushNewScreen(
+              context,
+              screen: const ProfileView(),
+              withNavBar: false,
+              pageTransitionAnimation: PageTransitionAnimation.sizeUp,
+            );
+          },
+          styleValue: Styles.textStyle18.copyWith(
+            color: (isBoy == null)
+                ? ColorManager.mainColor
+                : (isBoy == true
+                    ? ColorManager.boyBabyName
+                    : ColorManager.girlBabyName),
+          ),
+          title: "Hi, Shifaa",
+          subTitle: "Good Morning",
+          imagePath:
+              "https://i.pinimg.com/originals/f3/8d/bc/f38dbcbab1e30643e05f5b9caa8aaa39.jpg",
+          hasNotifcation: hasNotification(events),
+          onTap: () {
+            PersistentNavBarNavigator.pushNewScreen(
+              context,
+              screen: const CalenderView(),
+              withNavBar: true,
+              pageTransitionAnimation: PageTransitionAnimation.sizeUp,
+            );
+          },
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            children: [
+              Visibility(
+                visible: isBoy == null,
+                child: CurrentWeekCard(currentWeek: 24),
+                replacement: BabyDaiesCounter(isBoy: isBoy ?? true),
+              ),
+              Visibility(
+                child: VerticalSpace(2),
+                visible: isBoy == null,
+                replacement: SizedBox.shrink(),
+              ),
+              Visibility(
+                child: BabyInfoCard(currentWeek: 24),
+                visible: isBoy == null,
+                replacement: SizedBox.shrink(),
+              ),
+              Visibility(
+                child: VerticalSpace(2),
+                visible: isBoy == null,
+                replacement: SizedBox.shrink(),
+              ),
+              Visibility(
+                child: BabyLookLikeCard(
+                  image:
+                      "https://openclipart.org/image/2400px/svg_to_png/88669/1286225671.png",
+                  title: "a Cauliflower",
+                  currentWeek: 24,
+                ),
+                visible: isBoy == null,
+                replacement: SizedBox.shrink(),
+              ),
+              VerticalSpace(2),
+              Visibility(
+                child: BabyBornCheckedCard(),
+                visible: isBoy == null,
+                replacement: HomeChangeModeCard(
+                  isBoy: isBoy ?? true,
+                ),
+              ),
+              VerticalSpace(2),
+              CustomArticleItem(
+                isBoy: isBoy,
+              ),
+              VerticalSpace(2),
+              CustomArticleItem(isBoy: isBoy),
+              Visibility(
+                child: VerticalSpace(2),
+                visible: isBoy == null,
+                replacement: SizedBox.shrink(),
+              ),
+              Visibility(
+                child: AdvertisementCard(),
+                visible: isBoy == null,
+                replacement: SizedBox.shrink(),
+              ),
+              VerticalSpace(2),
+              CustomArticleItem(isBoy: isBoy),
+              VerticalSpace(2),
+            ],
           ),
         ),
-        body: const SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              children: [
-                CurrentWeekCard(currentWeek: 24),
-                VerticalSpace(2),
-                BabyInfoCard(currentWeek: 24),
-                VerticalSpace(2),
-                BabyLookLikeCard(
-                    image:
-                        "https://openclipart.org/image/2400px/svg_to_png/88669/1286225671.png",
-                    title: "a Cauliflower",
-                    currentWeek: 24),
-                VerticalSpace(2),
-                BabyBornCheckedCard(),
-                VerticalSpace(2),
-                CustomArticleItem(),
-                VerticalSpace(2),
-                CustomArticleItem(),
-                VerticalSpace(2),
-                AdvertisementCard(),
-                VerticalSpace(2),
-                CustomArticleItem(),
-                VerticalSpace(2),
-              ],
-            ),
-          ),
-        ));
+      ),
+    );
   }
 }

@@ -45,6 +45,12 @@ abstract class Styles {
     fontFamily: FontType.kRoboto,
     color: ColorManager.mainColor,
   );
+  static const robotoTextStyle18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    fontFamily: FontType.kRoboto,
+    color: ColorManager.mainColor,
+  );
 
   static const textStyle18 = TextStyle(
       fontSize: 18, fontWeight: FontWeight.w700, fontFamily: FontType.kRoboto);

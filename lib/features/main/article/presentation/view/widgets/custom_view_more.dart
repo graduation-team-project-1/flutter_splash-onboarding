@@ -20,12 +20,12 @@ class CustomViewMore extends StatelessWidget {
             style: Styles.textStyle24.copyWith(
               fontSize: 14,
               fontWeight: FontWeight.w600,
-              color: ColorManager.pinkColor,
+              color: ColorManager.mainColor,
             ),
           ),
-          const Icon(
+          Icon(
             Icons.arrow_forward,
-            color: ColorManager.pinkColor,
+            color: ColorManager.mainColor,
           ),
         ],
       ),

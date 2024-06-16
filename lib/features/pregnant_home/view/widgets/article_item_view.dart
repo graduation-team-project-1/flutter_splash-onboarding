@@ -8,8 +8,8 @@ import 'package:app/features/pregnant_home/view/widgets/custom_image_display.dar
 import 'package:flutter/material.dart';
 
 class ArticleItemView extends StatefulWidget {
-  const ArticleItemView({super.key});
-
+  const ArticleItemView({super.key, this.isBoy});
+  final bool? isBoy;
   @override
   State<ArticleItemView> createState() => _ArticleItemViewState();
 }
@@ -45,7 +45,11 @@ class _ArticleItemViewState extends State<ArticleItemView> {
                     "Difficulty sleeping ",
                     maxLines: 1,
                     style: Styles.textStyle18.copyWith(
-                        color: ColorManager.mainColor,
+                        color: (widget.isBoy == null)
+                            ? ColorManager.mainColor
+                            : (widget.isBoy == true
+                                ? ColorManager.boyBabyName
+                                : ColorManager.girlBabyName),
                         overflow: TextOverflow.ellipsis),
                   ),
                   const Spacer(),

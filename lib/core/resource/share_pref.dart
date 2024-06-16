@@ -50,4 +50,34 @@ class AppSharedPref {
   Future<bool> getOnBoarding() async {
     return _sharedPreferences.getBool(KeyValues.onBoardingItemKey) ?? false;
   }
+
+  Future<void> saveNames(
+      {required List<String> names, required String key}) async {
+    await _sharedPreferences.setStringList(key, names);
+  }
+
+  Future<void> addName({required String name, required String key}) async {
+    List<String> names = await getNames(key: key);
+    if (!names.contains(name)) {
+      names.add(name);
+      await saveNames(names: names, key: key);
+    }
+  }
+
+  Future<void> removeName({required String name, required String key}) async {
+    List<String> names = await getNames(key: key);
+    if (names.contains(name)) {
+      names.remove(name);
+      await saveNames(names: names, key: key);
+    }
+  }
+
+  List<String> getNames({required String key})  {
+    List<String> data =  _sharedPreferences.getStringList(key) ?? [];
+    return data;
+  }
+
+  Future<void> clearAllData() async {
+    await _sharedPreferences.clear();
+  }
 }

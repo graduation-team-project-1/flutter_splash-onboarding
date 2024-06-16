@@ -11,8 +11,7 @@ class ImagesPath {
       "${AssetsPath.imagePathAssets}Baby monitoring.svg";
   static const String postpartumCare =
       "${AssetsPath.imagePathAssets}Postpartum care.svg";
-  static const String testImage =
-      "${AssetsPath.imagePathAssets}testImage.jpg";
+  static const String testImage = "${AssetsPath.imagePathAssets}testImage.jpg";
   static const String pregnancyTracking =
       "${AssetsPath.imagePathAssets}Pregnancy tracking.svg";
   static const String analysisOfBabyCrying =
@@ -112,39 +111,52 @@ class ImagesPath {
 
   static const String babyNameMore =
       "${AssetsPath.imagePathAssets}baby_names.svg";
-  
-  static const String apple =
-      "${AssetsPath.imagePathAssets}apple.png";
 
-  static const String chicken =
-      "${AssetsPath.imagePathAssets}chicken.png";
-  
+  static const String apple = "${AssetsPath.imagePathAssets}apple.png";
+
+  static const String chicken = "${AssetsPath.imagePathAssets}chicken.png";
+
   static const String fruitVegtiables =
       "${AssetsPath.imagePathAssets}fruit_vegtiables.png";
-  
+
   static const String fuitsaladHoney =
       "${AssetsPath.imagePathAssets}fruitsalad_honey.png";
-  
-  static const String kiwi =
-      "${AssetsPath.imagePathAssets}kiwi.png";
-  
-  static const String lemon =
-      "${AssetsPath.imagePathAssets}lemon.png";
- 
-  static const String mango =
-      "${AssetsPath.imagePathAssets}mango.png";
-  
-  static const String nuts =
-      "${AssetsPath.imagePathAssets}nuts.png";
-  
-  static const String oatsMilk =
-      "${AssetsPath.imagePathAssets}oats_milk.png";
-  
-  static const String pasta =
-      "${AssetsPath.imagePathAssets}pasta.png";
- 
+
+  static const String kiwi = "${AssetsPath.imagePathAssets}kiwi.png";
+
+  static const String lemon = "${AssetsPath.imagePathAssets}lemon.png";
+
+  static const String mango = "${AssetsPath.imagePathAssets}mango.png";
+
+  static const String nuts = "${AssetsPath.imagePathAssets}nuts.png";
+
+  static const String oatsMilk = "${AssetsPath.imagePathAssets}oats_milk.png";
+
+  static const String pasta = "${AssetsPath.imagePathAssets}pasta.png";
+
   static const String toastAvocado =
       "${AssetsPath.imagePathAssets}toast_avocado.png";
-  static const String toastEggs =
-      "${AssetsPath.imagePathAssets}toast_eggs.png";
+  static const String toastEggs = "${AssetsPath.imagePathAssets}toast_eggs.png";
+
+  static const String boyBabyName =
+      '${AssetsPath.imagePathAssets}boy_baby_name.svg';
+  static const String girlBabyName =
+      '${AssetsPath.imagePathAssets}girl_baby_name.svg';
+  static const String favioBabyName =
+      '${AssetsPath.imagePathAssets}favourite_baby_name.svg';
+  static const String boyCounter =
+      '${AssetsPath.imagePathAssets}boy_counter.svg';
+
+  static const String cryAnalyzer =
+      '${AssetsPath.imagePathAssets}cry_analyzer.svg';
+}
+
+class IconsPath {
+  static const String boyLike = "${AssetsPath.iconImagePathAssets}boy_like.svg";
+  static const String boyDisLike =
+      "${AssetsPath.iconImagePathAssets}boy_dislike.svg";
+  static const String girlLike =
+      "${AssetsPath.iconImagePathAssets}girl_like.svg";
+  static const String girlDisLike =
+      "${AssetsPath.iconImagePathAssets}girl_dislike.svg";
 }

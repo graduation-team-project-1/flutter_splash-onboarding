@@ -2,14 +2,12 @@ import 'package:app/features/main/article/presentation/view/widgets/articles_scr
 import 'package:flutter/material.dart';
 
 class ArticlesScreen extends StatelessWidget {
-  const ArticlesScreen({super.key});
-
+  const ArticlesScreen({super.key, this.isBoy});
+  final bool? isBoy;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: ArticlesScreenBody(),
-      ),
+    return Scaffold(
+      body: ArticlesScreenBody(isBoy: isBoy,),
     );
   }
 }

@@ -9,8 +9,8 @@ class CustomDatePickerOverlay extends StatelessWidget {
   const CustomDatePickerOverlay({
     required this.handleBackgroundTap,
     required this.handleDateTimeChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final Function handleBackgroundTap;
   final Function(DateTime?) handleDateTimeChanged;
 
