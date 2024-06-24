@@ -1,11 +1,14 @@
 import 'package:app/core/resource/color_manager.dart';
+import 'package:app/core/resource/dependency_injection.dart';
+import 'package:app/core/resource/share_pref.dart';
 import 'package:app/core/resource/size_config.dart';
+import 'package:app/core/resource/string_manage.dart';
 import 'package:app/core/widgets/custom_button.dart';
-import 'package:app/features/auth/view/register_view.dart';
+import 'package:app/features/auth/login/view/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
+import 'package:app/features/pregnant_home/presentation/view/pregnant_home_view.dart';
 import 'custom_indicator.dart';
 import 'custom_page_view.dart';
 
@@ -18,9 +21,9 @@ class OnBoardingViewBody extends StatefulWidget {
 
 class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   PageController? pageController;
+  final sharedPref = instance.get<AppSharedPref>();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     pageController = PageController(initialPage: 0)
       ..addListener(
@@ -28,6 +31,12 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           setState(() {});
         },
       );
+  }
+
+  Future<void> tesSetON() async {
+    if (await sharedPref.getOnBoarding() == false) {
+      sharedPref.setOnBoarding();
+    }
   }
 
   @override
@@ -52,9 +61,13 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             children: [
               Expanded(
                 child: CustomButton(
-                  buttonTitle: "Skip",
+                  buttonTitle: StringManager.skip,
                   onPressed: () {
-                    Get.to(() => const RegisterView(),
+                    tesSetON();
+                    Get.to(
+                      () => const LoginView(),
+                    );
+                    Get.to(() => const PregnantHomeView(),
                         transition: Transition.zoom,
                         duration: const Duration(milliseconds: 600));
                   },
@@ -68,10 +81,15 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                   onPressed: () {
                     if (pageController!.page! < 3) {
                       pageController!.nextPage(
-                          duration: const Duration(milliseconds: 600),
-                          curve: Curves.easeIn);
+                        duration: const Duration(milliseconds: 600),
+                        curve: Curves.easeIn,
+                      );
                     } else {
-                      Get.to(() => const RegisterView(),
+                      tesSetON();
+                      Get.to(
+                        () => const LoginView(),
+                      );
+                      Get.to(() => const PregnantHomeView(),
                           transition: Transition.rightToLeft,
                           duration: const Duration(milliseconds: 600));
                     }
@@ -89,5 +107,11 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         )
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    pageController?.dispose();
+    super.dispose();
   }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "230173034901",
+    "project_id": "depression-test-using-ml",
+    "storage_bucket": "depression-test-using-ml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230173034901:android:0fffb18318fc04c6ffce9c",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWeg6688rmU8V7fWbJnQ8qcpRocvkZetQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
